@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Contest</title>
+    <link rel="stylesheet" href="contest.css">
+</head>
+<body>
+    <h1>Create Custom Contest</h1>
+
+    <!-- Create Custom Contest Button (Visible only when logged in) -->
+    <button id="createContestBtn" style="display: none;" onclick="openCreateContestModal()">Create Contest</button>
+
+    <!-- Modal for Creating Contest -->
+    <div id="createContestModal" class="modal">
+        <div class="modal-content">
+            <h2>Create Custom Contest</h2>
+            <label>Contest Name:</label>
+            <input type="text" id="contestName" required>
+
+            <label>Start Time:</label>
+            <input type="datetime-local" id="startTime" required>
+
+            <label>End Time:</label>
+            <input type="datetime-local" id="endTime" required>
+
+            <h3>Select Problems:</h3>
+            <table id="selectedProblemsTable">
+                <thead>
+                    <tr>
+                        <th>Problem ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="selectedProblems"></tbody>
+            </table>
+
+            <button onclick="submitCustomContest()">Create Contest</button>
+            <button onclick="closeCreateContestModal()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Display Custom Contests -->
+    <h2>Available Custom Contests</h2>
+    <div id="customContestsList"></div>
+
+    <script src="contest.js"></script>
+</body>
+</html>
+ 

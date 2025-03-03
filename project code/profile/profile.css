@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.profile-container {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+}
+
+#connect-section {
+    margin-top: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #444;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 12px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#disconnect-btn {
+    background: red;
+    color: white;
+    display: none;
+}
+
+#disconnect-btn:hover {
+    background: darkred;
+}
+
+button:nth-of-type(1) { 
+    background: #007bff; 
+    color: white; 
+}
+
+button:nth-of-type(2) { 
+    background: #6c757d; 
+    color: white; 
+}
+
+#verification-result {
+    margin-top: 10px;
+    font-weight: bold;
+}

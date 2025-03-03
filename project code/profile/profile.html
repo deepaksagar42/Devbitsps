@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Link your CSS -->
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+
+        <p><strong>Username:</strong> <span id="usernameDisplay">Loading...</span></p>
+        <p><strong>Codeforces Handle:</strong> <span id="cfHandleDisplay">Not Connected</span></p>
+
+        <div id="connect-section">
+            <label for="cf-handle">Enter your Codeforces Handle:</label>
+            <input type="text" id="cf-handle" placeholder="e.g., tourist">
+            <button onclick="verifyHandle()">Verify & Connect</button>
+            <p id="verification-result"></p>
+        </div>
+
+        <button id="disconnect-btn" style="display: none;" onclick="disconnectHandle()">Disconnect Codeforces</button>
+
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script src="profile.js"></script> <!-- Link your JavaScript -->
+</body>
+</html>

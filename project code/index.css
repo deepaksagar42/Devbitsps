@@ -1,0 +1,591 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f5f5f5;
+    margin:0;
+
+}
+
+/* Top Navbar */
+.navbar {
+    width: 100%;
+    background:black;
+    padding: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar ul li {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f1c40f;
+}
+
+/* .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgb(7, 7, 7);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #2e2d2d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+} */
+
+/* Main Dropdown */
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #1e1e1e;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sub-dropdown (for Contest List) */
+.sub-dropdown {
+    position: relative;
+}
+
+.sub-dropdown > a {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Sub-dropdown content */
+.sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #1e1e1e;
+    min-width: 180px;
+}
+
+
+/* Show sub-dropdown on hover */
+.sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+}
+
+/* Submenu Links */
+.sub-dropdown-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sub-dropdown-content a:hover {
+    background: black;
+}
+
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+}
+
+.nav a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.content {
+    margin-left: 270px; /* Space for sidebar */
+    padding: 20px;
+    flex-grow: 1;
+}
+#contestDisplay {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Topbar */
+.topbar h2 {
+    font-size: 1.8em;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Contest List */
+.contest-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Contest Cards */
+.contest-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contest-card:hover {
+    transform: scale(1.05);
+}
+
+.contest-card h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contest-card p {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.join-btn {
+    margin-top: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.join-btn:hover {
+    background: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+    .nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+    .contest-list {
+        flex-direction: column;
+    }
+}
+
+.contest-options {
+    display: none;
+    margin-left: 15px;
+}
+
+.contest-options a {
+    display: block;
+    font-size: 0.9em;
+    color: #bbb;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.contest-options a:hover {
+    color: white;
+}
+
+/* Auth Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 360px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 16px;
+}
+
+#login-box h2, #signup-box h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #333;
+    outline: none;
+}
+
+/* Button Styling */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.primary-btn {
+    background: #333;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #555;
+}
+
+.google-btn {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-btn:hover {
+    background: #f5f5f5;
+}
+
+.google-icon {
+    background: #4285F4;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Switch between login and signup */
+.auth-toggle {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-toggle a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* User Menu Styling */
+.user-menu {
+    display: none;
+    background: #2a2a2a;
+    margin-left: 12px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.user-menu a {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    display: block;
+}
+
+.user-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#logout-link {
+    color: #ff7070;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
+#contest-section  {
+    display: none; /* Hide both sections initially */
+    padding: 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+#problemset-section {
+    width: 80%; /* Adjust width as needed */
+    margin: 20px auto; /* Centers the section horizontally */
+    text-align: center;
+}
+
+/* Style for Problemset table */
+.problem-table {
+    width: 100%;
+    margin: 0 auto; /* Centers the table inside the section */
+    border-collapse: collapse;
+}
+
+.problem-table th, .problem-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.problem-table th {
+    background: #333;
+    color: #fff;
+}
+
+.problem-table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.problem-table tr:hover {
+    background: #ddd;
+}
+
+.problem-id {
+    font-weight: bold;
+}
+
+.difficulty-easy {
+    color: green;
+}
+
+.difficulty-medium {
+    color: orange;
+}
+
+.difficulty-hard {
+    color: red;
+}
+
+#problemset-section {
+    display: none; /* Hide problemset by default */
+}
+
+.content {
+    margin-left: 270px;
+    padding: 30px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.contest-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.problem-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.problem-table th, .problem-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.problem-table th {
+    background: #1e1e1e;
+    color: white;
+    text-transform: uppercase;
+}
+
+.problem-table tr:hover {
+    background: #f5f5f5;
+}
+
+.problem-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.problem-link:hover {
+    color: #0056b3;
+}
+
+#custom-contest-form {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.question-item {
+    margin-bottom: 10px;
+}
+
+.primary-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+} 
